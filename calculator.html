@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+
+    <script>
+        // function that display value 
+        function dis(val) {
+            document.getElementById("result").value+=val
+        }
+
+        // function for evaluating result
+        function solve() {
+            let u = document.getElementById("result").value
+            let y = eval(u)
+            document.getElementById("result").value = y
+        }
+
+        // clear function
+        function clr() {
+            document.getElementById("result").value = " "
+        }
+
+        // delete function
+        function del() {
+            let dele = document.getElementById("result");
+            dele.value = dele.value.slice(0, dele.value.length-1)
+        }
+        
+    </script>
+</head>
+<body>
+    <div>
+        <table class="table" cellspacing="0" style="border-spacing: 0;">
+            <tr>
+                <td colspan="4"><input type="text" id="result"></td>
+            </tr>
+            <!-- <tr>
+                <td colspan="2"><input type="button" value="AC" class="ac"></td>
+                <td colspan="2"><input type="button" value="Del" class="del"></td>
+                <td><input type="button" value="7"></td>
+                <td><input type="button" value="7"></td>
+            </tr> -->
+            <div class="adjust">
+                <tr>
+                    <td><input type="button" value="7" onclick="dis('7')" class="butt"></td>
+                    <td><input type="button" value="8" onclick="dis('8')" class="butt"></td>
+                    <td><input type="button" value="9" onclick="dis('9')" class="butt"></td>
+                    <td><input type="button" value="*" onclick="dis('*')" class="butt"></td>
+                    <td rowspan="2"><input type="button" value="AC" class="ac" onclick="clr()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" onclick="dis('4')" class="butt"></td>
+                    <td><input type="button" value="5" onclick="dis('5')" class="butt"></td>
+                    <td><input type="button" value="6" onclick="dis('6')" class="butt"></td>
+                    <td><input type="button" value="-"  onclick="dis('-')"class="butt"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="1" onclick="dis('1')" class="butt"></td>
+                    <td><input type="button" value="2" onclick="dis('2')" class="butt"></td>
+                    <td><input type="button" value="3" onclick="dis('3')" class="butt"></td>
+                    <td><input type="button" value="+" onclick="dis('+')" class="butt"></td>
+                    <td rowspan="2"><input type="button" value="Del" onclick="del()" class="del"></td>
+                </tr>
+                     <td><input type="button" value="0" onclick="dis('0')" class="butt"></td>
+                     <td><input type="button" value="." onclick="dis('.')" class="butt"></td>
+                     <td><input type="button" value="/" onclick="dis('/')" class="butt"></td>
+                     <td><input type="button" value="=" onclick="solve()" class="butt"></td>
+            </div>
+        </table>
+    </div>
+</body>
+</html>
